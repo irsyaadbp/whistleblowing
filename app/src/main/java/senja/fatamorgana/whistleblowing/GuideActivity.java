@@ -38,7 +38,7 @@ public class GuideActivity extends AppCompatActivity {
         // Checking for first time launch - before calling setContentView()
         SP_Help = new SharedPrefManager(this);
 
-        if (SP_Help.getSPFirst()){
+        if (SP_Help.getSPFirst() == true){
             launchLogin();
         }
 
