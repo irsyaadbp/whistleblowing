@@ -13,10 +13,14 @@ public class SharedPrefManager {
     public static final String SP_PASSWORD = "password";
     public static final String SP_SUDAH_LOGIN = "spSudahLogin";
     public static final String SP_FIRST = "pertama";
-    public static final String SP_CHANCE = "satu";
-    public static final String SP_QUESTION = "satu";
-    public static final String SP_ANSWER = "satu";
+    public static final String SP_CHANCE = "chance";
+    public static final String SP_QUESTION = "question";
+    public static final String SP_ANSWER = "answer";
     public static final String SP_SEARCH_KEY = "key";
+    public static final String SP_APPID = "app_id";
+    public static final String SP_APPVERSION = "app_version";
+    public static final String SP_APPSTATUS = "app_status";
+    public static final String SP_APPPASSWORD = "app_password";
 
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
@@ -67,6 +71,22 @@ public class SharedPrefManager {
 
     public String getSpQuestion() {
         return sp.getString(SP_QUESTION, "");
+    }
+
+    public String getSpAppid() {
+        return sp.getString(SP_APPID, "");
+    }
+
+    public String getSpAppversion() {
+        return sp.getString(SP_APPVERSION, "");
+    }
+
+    public String getSpAppstatus() {
+        return sp.getString(SP_APPSTATUS, "");
+    }
+
+    public String getSpApppassword() {
+        return sp.getString(SP_APPPASSWORD, "");
     }
 
     public String getSpAnswer() {
