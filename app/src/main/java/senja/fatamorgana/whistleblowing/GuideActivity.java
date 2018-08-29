@@ -19,6 +19,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import senja.fatamorgana.whistleblowing.Config.SharedPrefManager;
+
 public class GuideActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
@@ -27,17 +29,17 @@ public class GuideActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext, btnToLogin;
-    private SharedPrefManager prefManager;
+    private SharedPrefManager SP_Help;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
-        prefManager = new SharedPrefManager(this);
-        if (!prefManager.isFirstTimeLaunch()) {
+        SP_Help = new SharedPrefManager(this);
+
+        if (SP_Help.getSPFirst()){
             launchLogin();
-            finish();
         }
 
         if (Build.VERSION.SDK_INT >= 21) {
@@ -112,7 +114,7 @@ public class GuideActivity extends AppCompatActivity {
     }
 
     private void launchLogin() {
-        prefManager.setFirstTimeLaunch(false);
+        SP_Help.saveSPBoolean(SharedPrefManager.SP_FIRST, true);
         startActivity(new Intent(GuideActivity.this, LoginActivity.class));
         finish();
     }
@@ -134,6 +136,7 @@ public class GuideActivity extends AppCompatActivity {
                 // still pages are left
                 btnNext.setVisibility(View.VISIBLE);
                 btnSkip.setVisibility(View.VISIBLE);
+                btnToLogin.setVisibility(View.GONE);
             }
         }
 

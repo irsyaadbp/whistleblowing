@@ -8,6 +8,8 @@
     <string name="profil">Profil</string>
     <string name="logout">Keluar</string>
     <string name="info">Info</string>
+    <string name="koneksi_error">Pakai Kuota Sendiri Ya :)</string>
+    <string name="akun_false">Kamu Belum Terdaftar !, Coba Cek Kembali NIM Anda</string>
 
 
     <!--String Intro Slider -->
@@ -30,4 +32,6 @@
     <string name="slide_title4">Hadiah !!</string>
     <string name="slide_desc4">Jika beruntung kamu akan mendapatkan hadiah kejutan setelah menyelesaikan Quiz</string>
 
+    <!-- Login -->
+    <string name="loginKosong">Masukkan NIM Anda :)</string>
 </resources>
